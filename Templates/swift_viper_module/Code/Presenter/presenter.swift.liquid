@@ -1,0 +1,27 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Class
+class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput, {{ module_info.name }}ViewOutput, {{ module_info.name }}InteractorOutput {
+
+    // MARK: - Viper properties
+    weak var view: {{ module_info.name }}ViewInput!
+    var interactor: {{ module_info.name }}InteractorInput!
+    var router: {{ module_info.name }}RouterInput!
+
+    // MARK: - Init
+    init(view: {{ module_info.name }}ViewInput, router: {{ module_info.name }}RouterInput) {
+        self.view = view
+        self.router = router
+    }
+
+    // MARK: - {{ module_info.name }}ViewOutput
+    func viewIsReady() {
+
+    }
+}

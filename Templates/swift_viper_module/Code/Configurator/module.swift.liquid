@@ -1,0 +1,24 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}Module: Module {
+    typealias Input = {{ module_info.name }}Presenter
+    
+    func instantiateTransitionHandler() -> UIViewController {
+        let storyboard = UIStoryboard(name: "{{ module_info.name }}", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() as? {{ module_info.name }}ViewController else {
+            fatalError("Could not instantiate {{ module_info.name }}ViewController")
+        }
+        return vc
+    }
+
+    required init() {
+    }
+}

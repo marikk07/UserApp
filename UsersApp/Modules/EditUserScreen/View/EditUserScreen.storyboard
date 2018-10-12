@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z5f-Rw-kdZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit User Module View Controller-->
+        <scene sceneID="6bF-mP-pbh">
+            <objects>
+                <viewController id="Z5f-Rw-kdZ" customClass="EditUserScreenViewController" customModule="UsersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I0B-Lq-iCT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sFS-mq-iHQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z5f-Rw-kdZ" id="jAG-nw-BPe"/>
+                                    <outlet property="delegate" destination="Z5f-Rw-kdZ" id="vfI-OG-vPI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lgZ-bJ-fne" firstAttribute="trailing" secondItem="sFS-mq-iHQ" secondAttribute="trailing" id="Acm-Mf-v1U"/>
+                            <constraint firstItem="sFS-mq-iHQ" firstAttribute="leading" secondItem="lgZ-bJ-fne" secondAttribute="leading" id="cIO-1c-UiU"/>
+                            <constraint firstItem="lgZ-bJ-fne" firstAttribute="bottom" secondItem="sFS-mq-iHQ" secondAttribute="bottom" id="ps2-KZ-r0d"/>
+                            <constraint firstItem="sFS-mq-iHQ" firstAttribute="top" secondItem="lgZ-bJ-fne" secondAttribute="top" id="qjv-8b-BWU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lgZ-bJ-fne"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="sFS-mq-iHQ" id="BXQ-IS-ilg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dr5-JZ-QE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="TrF-rn-Iuy" customClass="EditUserScreenModuleInitializer" customModule="UsersApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="editUserModuleViewController" destination="Z5f-Rw-kdZ" id="bKr-AH-7RO"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-2" y="110"/>
+        </scene>
+    </scenes>
+</document>

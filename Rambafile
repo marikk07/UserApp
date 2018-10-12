@@ -1,0 +1,22 @@
+### Headers settings
+company: Maryan Company
+
+### Xcode project settings
+project_name: UsersApp
+xcodeproj_path: UsersApp.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: UsersApp
+
+# The file path for new modules
+project_file_path: UsersApp/Modules
+
+# The Xcode group path to new modules
+project_group_path: UsersApp/Modules
+
+### Templates
+templates:
+#- {name: local_template_name, local: 'absolute/file/path'}
+#- {name: remote_template_name, git: 'https://github.com/igrekde/remote_template'}
+- {name: swift_viper_module, local: swift_viper_module}
