@@ -11,6 +11,5 @@ import Foundation
 protocol EditUserScreenInteractorOutput: class {
     func showErrorAlert(message: String)
     func successfullyUpdateUsers()
-     func successfullyUploadedImgWith(_ url: String)
     func failedWith(_ error: ApiError)
 }
