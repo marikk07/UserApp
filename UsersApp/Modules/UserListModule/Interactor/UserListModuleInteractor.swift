@@ -39,18 +39,15 @@ extension UserListModuleInteractor: UsersServiceOutput {
         }
     }
     
-    func successfullyUpdateUser() {
-    }
-    
-    func successfullyUploadedImgForUser(_ url: String, user: UserInputModel) {
-    }
-    
-    
     func handleError(_ error: ApiError, completion: (() -> ())?) {
         DispatchQueue.main.async {
             self.output.failedWith(error)
         }
     }
     
+    func successfullyUpdateUser() {
+    }
     
+    func successfullyUploadedImgForUser(_ url: String, user: UserInputModel) {
+    }
 }

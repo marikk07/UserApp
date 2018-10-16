@@ -12,7 +12,7 @@ protocol EditUserScreenDelegate: class {
 }
 
 class EditUserScreenInteractor: EditUserScreenInteractorInput {
-
+    
     // MARK: - Properties
     weak var output: EditUserScreenInteractorOutput!
     var emailValidator: EmailValidatorServiceInput!
@@ -23,22 +23,22 @@ class EditUserScreenInteractor: EditUserScreenInteractorInput {
     init(output: EditUserScreenInteractorOutput) {
         self.output = output
     }
-
+    
     // MARK: - EditUserScreenInteractorInput
     func saveButtonTouchedWith(user: UserInputModel, imageVO: ImageVO) {
         if user.first_name.count < 1 || user.last_name.count < 1 || user.email.count < 1 {
-                self.output.showErrorAlert(message: "Fill all fields")
-            } else {
-                let responce = self.emailValidator.validateEmail(user.email)
-                switch responce {
-                case .valid:
-                    self.userService.uploadImageForUser(imageVO, user: user)
-                case .error(let message):
-                    self.output.showErrorAlert(message: message)
-                }
+            self.output.showErrorAlert(message: "Fill all fields")
+        } else {
+            let responce = self.emailValidator.validateEmail(user.email)
+            switch responce {
+            case .valid:
+                self.userService.uploadImageForUser(imageVO, user: user)
+            case .error(let message):
+                self.output.showErrorAlert(message: message)
             }
+        }
     }
-
+    
 }
 
 extension EditUserScreenInteractor: UsersServiceOutput {
@@ -53,7 +53,6 @@ extension EditUserScreenInteractor: UsersServiceOutput {
         
     }
     
-    
     func successfullyUpdateUser() {
         DispatchQueue.main.async {
             self.output.successfullyUpdateUsers()
@@ -66,5 +65,5 @@ extension EditUserScreenInteractor: UsersServiceOutput {
             self.output.failedWith(error)
         }
     }
-
+    
 }

@@ -88,7 +88,6 @@ class EditUserScreenViewController: AbstractViewController, EditUserScreenViewIn
         tableView.scrollIndicatorInsets = contentInsets
     }
     
-    
     // MARK: - Actions
     @objc func actionSaveButtonTouchUpInside(_ sender: UIBarButtonItem) {
         guard   let firstNameCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? EditUserCell,
@@ -112,7 +111,6 @@ class EditUserScreenViewController: AbstractViewController, EditUserScreenViewIn
     func avatarViewTapped(_ sender: EditUserHeader) {
         self.output.showPhotoPicker()
     }
-    
     
     //MARK: - EditUserScreenViewInput
     func choosePickerAlert() {
