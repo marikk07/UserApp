@@ -40,6 +40,11 @@ class EditUserScreenPresenter: EditUserScreenModuleInput, EditUserScreenViewOutp
         self.closeModule()
     }
     
+    func successfullyUploadedImgWith(_ url: String) {
+        self.view.hideLoader()
+//        self.view.successfullyUploadedImgWith(url)
+    }
+    
     func failedWith(_ error: ApiError) {
         self.view.hideLoader()
         self.view.showErrorAlertWithMessage(error.localizedDescription)
@@ -49,11 +54,17 @@ class EditUserScreenPresenter: EditUserScreenModuleInput, EditUserScreenViewOutp
         self.router.closeModule()
     }
     
+    
     // MARK: - EditUserScreenViewOutput
-    func saveButtonTouchedWith(firstName: String?, lastName: String?, email: String?, id: String?) {
+    func saveButtonTouchedWith(user: UserInputModel, imageVO: ImageVO)   {
         self.view.showLoader()
-        self.interactor.saveButtonTouchedWith(firstName: firstName, lastName: lastName, email: email, id: id)
+        self.interactor.saveButtonTouchedWith(user: user, imageVO: imageVO)
     }
     
+
+    
+    func showPhotoPicker() {
+        self.view.choosePickerAlert()
+    }
     
 }

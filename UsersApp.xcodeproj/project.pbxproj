@@ -28,6 +28,9 @@
 		83FEF52EC20B65DCCD3D15B4 /* UserListModuleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4380599F2123D4C3D0A1B1B9 /* UserListModuleModule.swift */; };
 		8F2771F2654FE2CFF2FA9C3E /* UserListModuleInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB2A7387B33169B7A3A51C /* UserListModuleInteractorOutput.swift */; };
 		905D690EEE22E5355D885E01 /* EditUserScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85540CF405AE1AABA1402201 /* EditUserScreenViewOutput.swift */; };
+		9524826B2175E957006F04CB /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524826A2175E957006F04CB /* ImageResponse.swift */; };
+		9524826D2175ED0C006F04CB /* DataAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524826C2175ED0C006F04CB /* DataAPIResponse.swift */; };
+		952482702175F248006F04CB /* UserInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524826F2175F248006F04CB /* UserInputModel.swift */; };
 		952AC582216F218300430B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AC581216F218300430B7B /* AppDelegate.swift */; };
 		952AC589216F218400430B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952AC588216F218400430B7B /* Assets.xcassets */; };
 		952AC58C216F218400430B7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952AC58A216F218400430B7B /* LaunchScreen.storyboard */; };
@@ -59,6 +62,9 @@
 		95E302F8216F2D9000838D65 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E302F7216F2D9000838D65 /* UsersService.swift */; };
 		95E302FA216F2DA300838D65 /* UsersServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E302F9216F2DA300838D65 /* UsersServiceInput.swift */; };
 		95E302FC216F2DB100838D65 /* UsersServiceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E302FB216F2DB100838D65 /* UsersServiceOutput.swift */; };
+		95EB3C172174776100312312 /* EditUserHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EB3C152174776000312312 /* EditUserHeader.xib */; };
+		95EB3C182174776100312312 /* EditUserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB3C162174776000312312 /* EditUserHeader.swift */; };
+		95EB3C1B2174A6CA00312312 /* ImageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB3C1A2174A6CA00312312 /* ImageVO.swift */; };
 		95F645452170E5B100454433 /* EmailValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F645432170E5B100454433 /* EmailValidatorService.swift */; };
 		95F645462170E5B100454433 /* EmailValidatorServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F645442170E5B100454433 /* EmailValidatorServiceInput.swift */; };
 		9A44468BC3FB22ED3EF6D978 /* EditUserScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AED8E8BCD8375794EAB134 /* EditUserScreenPresenter.swift */; };
@@ -86,6 +92,9 @@
 		7CB479A2402EA47660CD6357 /* EditUserScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditUserScreenInteractorInput.swift; sourceTree = "<group>"; };
 		85540CF405AE1AABA1402201 /* EditUserScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditUserScreenViewOutput.swift; sourceTree = "<group>"; };
 		8EB7D037B69618D95517B0A4 /* Pods-UsersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-UsersApp/Pods-UsersApp.release.xcconfig"; sourceTree = "<group>"; };
+		9524826A2175E957006F04CB /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
+		9524826C2175ED0C006F04CB /* DataAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPIResponse.swift; sourceTree = "<group>"; };
+		9524826F2175F248006F04CB /* UserInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputModel.swift; sourceTree = "<group>"; };
 		952AC57E216F218300430B7B /* UsersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		952AC581216F218300430B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		952AC588216F218400430B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +128,9 @@
 		95E302F7216F2D9000838D65 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		95E302F9216F2DA300838D65 /* UsersServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceInput.swift; sourceTree = "<group>"; };
 		95E302FB216F2DB100838D65 /* UsersServiceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceOutput.swift; sourceTree = "<group>"; };
+		95EB3C152174776000312312 /* EditUserHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditUserHeader.xib; sourceTree = "<group>"; };
+		95EB3C162174776000312312 /* EditUserHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserHeader.swift; sourceTree = "<group>"; };
+		95EB3C1A2174A6CA00312312 /* ImageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVO.swift; sourceTree = "<group>"; };
 		95F645432170E5B100454433 /* EmailValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorService.swift; sourceTree = "<group>"; };
 		95F645442170E5B100454433 /* EmailValidatorServiceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorServiceInput.swift; sourceTree = "<group>"; };
 		A1DCC3991D2959519F510D05 /* UserListModuleInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserListModuleInitializer.swift; sourceTree = "<group>"; };
@@ -220,6 +232,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		9524826E2175F228006F04CB /* ApiRequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				9524826F2175F248006F04CB /* UserInputModel.swift */,
+			);
+			path = ApiRequestModels;
+			sourceTree = "<group>";
+		};
 		952AC575216F218200430B7B = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +261,7 @@
 		952AC580216F218300430B7B /* UsersApp */ = {
 			isa = PBXGroup;
 			children = (
+				95EB3C192174A6AE00312312 /* VisualObjects */,
 				95E302F5216F2D6F00838D65 /* Services */,
 				95E302E9216F2BF100838D65 /* Models */,
 				F37273C1E5F2A21E4B2082EA /* Modules */,
@@ -344,6 +365,7 @@
 		95E302E9216F2BF100838D65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9524826E2175F228006F04CB /* ApiRequestModels */,
 				95E302EE216F2C3100838D65 /* ApiResponseModels */,
 				95554171217094CD002D4C37 /* ValidatorResponse.swift */,
 				95E302EA216F2C0100838D65 /* APIError.swift */,
@@ -358,6 +380,8 @@
 				95E302F0216F2C4300838D65 /* ErrorResponse.swift */,
 				95E302EF216F2C4200838D65 /* EmptyAPIResponse.swift */,
 				95E302F3216F2C7A00838D65 /* UserResponse.swift */,
+				9524826A2175E957006F04CB /* ImageResponse.swift */,
+				9524826C2175ED0C006F04CB /* DataAPIResponse.swift */,
 			);
 			path = ApiResponseModels;
 			sourceTree = "<group>";
@@ -379,6 +403,23 @@
 				95E302F9216F2DA300838D65 /* UsersServiceInput.swift */,
 			);
 			path = UsersService;
+			sourceTree = "<group>";
+		};
+		95EB3C142174776000312312 /* EditUserHeader */ = {
+			isa = PBXGroup;
+			children = (
+				95EB3C152174776000312312 /* EditUserHeader.xib */,
+				95EB3C162174776000312312 /* EditUserHeader.swift */,
+			);
+			path = EditUserHeader;
+			sourceTree = "<group>";
+		};
+		95EB3C192174A6AE00312312 /* VisualObjects */ = {
+			isa = PBXGroup;
+			children = (
+				95EB3C1A2174A6CA00312312 /* ImageVO.swift */,
+			);
+			path = VisualObjects;
 			sourceTree = "<group>";
 		};
 		95F645422170E5B100454433 /* EmailValidatorService */ = {
@@ -414,6 +455,7 @@
 		B5855E462BC2E7602AF5DE2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95EB3C142174776000312312 /* EditUserHeader */,
 				9555417321709AF7002D4C37 /* EditUserCell */,
 				1C3A8FC9C6B4703ACD861952 /* EditUserScreenViewInput.swift */,
 				85540CF405AE1AABA1402201 /* EditUserScreenViewOutput.swift */,
@@ -537,6 +579,7 @@
 				952AC58C216F218400430B7B /* LaunchScreen.storyboard in Resources */,
 				9555417721709B18002D4C37 /* EditUserCell.xib in Resources */,
 				952AC589216F218400430B7B /* Assets.xcassets in Resources */,
+				95EB3C172174776100312312 /* EditUserHeader.xib in Resources */,
 				26DC51D0D44D12F10541C20F /* UserListModule.storyboard in Resources */,
 				0784E0CA6C1AE94593AF85FE /* EditUserScreen.storyboard in Resources */,
 			);
@@ -600,10 +643,12 @@
 				8186D187BFCF636CDE7C4F47 /* UserListModuleViewInput.swift in Sources */,
 				95E302F2216F2C4300838D65 /* ErrorResponse.swift in Sources */,
 				DC146A59A47BFAE216B4A269 /* UserListModuleViewOutput.swift in Sources */,
+				9524826B2175E957006F04CB /* ImageResponse.swift in Sources */,
 				B91FCD288D118BFF9C84C716 /* UserListModuleViewController.swift in Sources */,
 				95E302ED216F2C0100838D65 /* APIRequest .swift in Sources */,
 				95F645462170E5B100454433 /* EmailValidatorServiceInput.swift in Sources */,
 				E3DCF9AB3CBFAC9F026996A4 /* UserListModuleModuleInput.swift in Sources */,
+				952482702175F248006F04CB /* UserInputModel.swift in Sources */,
 				22C29EAF94242CCA1C9A83D5 /* UserListModulePresenter.swift in Sources */,
 				95E302D1216F251F00838D65 /* ModuleInputProvider.swift in Sources */,
 				9555417621709B18002D4C37 /* EditUserCell.swift in Sources */,
@@ -613,6 +658,7 @@
 				95E302E8216F2ADD00838D65 /* NetworkingManager.swift in Sources */,
 				42D2DD506CD285465F8FB6A9 /* UserListModuleInteractorInput.swift in Sources */,
 				95E302D6216F264200838D65 /* Constants.swift in Sources */,
+				95EB3C1B2174A6CA00312312 /* ImageVO.swift in Sources */,
 				95E302D8216F265800838D65 /* Storyboard.swift in Sources */,
 				95E302DA216F26AE00838D65 /* Segue.swift in Sources */,
 				8F2771F2654FE2CFF2FA9C3E /* UserListModuleInteractorOutput.swift in Sources */,
@@ -625,6 +671,7 @@
 				95E302EC216F2C0100838D65 /* APIError.swift in Sources */,
 				95E302FC216F2DB100838D65 /* UsersServiceOutput.swift in Sources */,
 				C5530EB156E5E2874F79EC6A /* UserListModuleConfigurator.swift in Sources */,
+				95EB3C182174776100312312 /* EditUserHeader.swift in Sources */,
 				25381A5DABC3949E242A1B3E /* UserListModuleInitializer.swift in Sources */,
 				95F645452170E5B100454433 /* EmailValidatorService.swift in Sources */,
 				95554172217094CD002D4C37 /* ValidatorResponse.swift in Sources */,
@@ -633,6 +680,7 @@
 				E0057AC0F8471805ACD1D11F /* EditUserScreenViewInput.swift in Sources */,
 				905D690EEE22E5355D885E01 /* EditUserScreenViewOutput.swift in Sources */,
 				69759C0E65B88CB577AE09A7 /* EditUserScreenViewController.swift in Sources */,
+				9524826D2175ED0C006F04CB /* DataAPIResponse.swift in Sources */,
 				0011590FA89D6BFECC62A4B8 /* EditUserScreenModuleInput.swift in Sources */,
 				9A44468BC3FB22ED3EF6D978 /* EditUserScreenPresenter.swift in Sources */,
 				743270B168C915CE5D414AC3 /* EditUserScreenInteractorInput.swift in Sources */,

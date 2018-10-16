@@ -13,18 +13,20 @@ struct NetworkingManager: RequestSender {
     
     // MARK: - Properties
     private let mainApi = "https://cua-users.herokuapp.com/"
+    private let additionalApi = "https://api.imgur.com/3/"
     
-    // MARK: - SaQureRequestSender
+    // MARK: - RequestSender
     func sendRequest<Response>(_ request: APIRequest,
+                               mainUrl: Bool,
                                responseType: Response.Type,
                                success: @escaping (Response) -> (),
                                failure: @escaping (ApiError) -> ()) where Response : Decodable {
         
-        guard let urlRequest = self.makeUrlRequest(saqureRequest: request) else {
+        guard let urlRequest = self.makeUrlRequest(mainApi: mainUrl, request: request) else {
             failure(ApiError(type: .failedToBuildUrl))
             return
         }
-        
+
         Alamofire.request(urlRequest)
             .responseData(queue: DispatchQueue.global(), completionHandler: { (response) in
                 
@@ -63,30 +65,53 @@ struct NetworkingManager: RequestSender {
             let responseObject = try JSONDecoder().decode(Response.self, from: data)
             return (responseObject, nil)
         } catch {
-            let error: ErrorResponse = ErrorResponse(message: "Unable to decode response", code: -99999)
-            return (nil,error)
+        
+            do {
+                let responseObject = try JSONDecoder().decode(DataAPIResponse<Response>.self, from: data)
+                switch responseObject {
+                case .data(value: let dataObject):
+                    return (dataObject, nil)
+                case .error(let error):
+                    return (nil, error)
+                }
+            } catch {
+                let error: ErrorResponse = ErrorResponse(message: "Unable to decode response", code: -99999)
+                return (nil,error)
+            }
+
         }
     }
     
-    fileprivate func makeUrlRequest(saqureRequest: APIRequest) -> URLRequest? {
-        guard let url = self.createURLWith(saqureRequest.apiMethod) else {
-            return nil
+    fileprivate func makeUrlRequest(mainApi: Bool, request: APIRequest) -> URLRequest? {
+        var url: URL? = nil
+        
+        if mainApi == true {
+            guard let createdUrl = self.createURLWith(request.apiMethod) else {
+                return nil
+            }
+            url = createdUrl
+        } else {
+            guard let createdUrl = self.createURLWithAdditional(request.apiMethod) else {
+                return nil
+            }
+            url = createdUrl
         }
+
         
         var urlRequest: URLRequest?
         do {
-            let tempUrlRequest = try URLRequest(url: url, method: saqureRequest.httpMethod, headers: nil)
-            switch saqureRequest.httpMethod {
+            let tempUrlRequest = try URLRequest(url: url!, method: request.httpMethod, headers: nil)
+            switch request.httpMethod {
             case .get, .head, .delete:
                 let encoding = URLEncoding(destination: .queryString)
-                urlRequest = try encoding.encode(tempUrlRequest, with: saqureRequest.parameters)
+                urlRequest = try encoding.encode(tempUrlRequest, with: request.parameters)
             default:
-                if let httpBody = saqureRequest.httpBody {
+                if let httpBody = request.httpBody {
                     urlRequest = tempUrlRequest
                     urlRequest?.httpBody = httpBody
                 } else {
                     let encoding = JSONEncoding(options: [])
-                    urlRequest = try encoding.encode(tempUrlRequest, with: saqureRequest.parameters)
+                    urlRequest = try encoding.encode(tempUrlRequest, with: request.parameters)
                 }
             }
         } catch {
@@ -96,12 +121,17 @@ struct NetworkingManager: RequestSender {
             return nil
             #endif
         }
-        
+        urlRequest?.allHTTPHeaderFields = request.headers
         return urlRequest
     }
     
     fileprivate func createURLWith(_ method: String) -> URL? {
         let final = self.mainApi
+        return URL(string: final + method)
+    }
+    
+    fileprivate func createURLWithAdditional(_ method: String) -> URL? {
+        let final = self.additionalApi
         return URL(string: final + method)
     }
 

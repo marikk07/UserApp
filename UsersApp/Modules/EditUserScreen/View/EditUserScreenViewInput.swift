@@ -9,4 +9,5 @@
 protocol EditUserScreenViewInput: AbstractViewInput {
     var inputUser: UserResponse? { get set }
     func setupInitialState()
+    func choosePickerAlert()
 }

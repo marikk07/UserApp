@@ -10,5 +10,5 @@ import Foundation
 
 protocol EditUserScreenInteractorInput {
     var delegate: EditUserScreenDelegate? { get set }
-    func saveButtonTouchedWith(firstName: String?, lastName: String?, email: String?, id: String?)
+    func saveButtonTouchedWith(user: UserInputModel, imageVO: ImageVO)
 }

@@ -8,5 +8,6 @@
 
 protocol EditUserScreenViewOutput {
     func viewIsReady()
-    func saveButtonTouchedWith(firstName: String?, lastName: String?, email: String?, id: String?)
+    func showPhotoPicker()
+    func saveButtonTouchedWith(user: UserInputModel, imageVO: ImageVO)
 }

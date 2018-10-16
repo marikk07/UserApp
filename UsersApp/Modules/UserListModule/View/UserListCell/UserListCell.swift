@@ -34,7 +34,7 @@ class UserListCell: UITableViewCell {
         nameLabel.text = user.first_name + " " + user.last_name
         emailLabel.text = user.email
         let placeHolder = UIImage.init(named: "userIcon")
-        iconImageView.sd_setImage(with:  URL(string: user.image_url), placeholderImage: placeHolder, options: .retryFailed, completed: nil)
+        iconImageView.sd_setImage(with: URL(string: user.image_url), placeholderImage: placeHolder, options: .retryFailed, completed: nil)
     }
     
 }

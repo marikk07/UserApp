@@ -11,4 +11,5 @@ import Foundation
 enum ApiMethod: String {
     case users = "users"
     case edit = "edit_user.php?"
+    case image = "image"
 }

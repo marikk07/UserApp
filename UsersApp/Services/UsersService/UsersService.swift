@@ -23,7 +23,7 @@ class UsersService: UsersServiceInput {
     
     func getUsers() {
         let request = self.requestBuilder.getUsers()
-        self.requestSender.sendRequest(request, responseType: [UserResponse].self, success: { [weak self] (response) in
+        self.requestSender.sendRequest(request, mainUrl: true, responseType: [UserResponse].self, success: { [weak self] (response) in
             self?.output?.successfullyGetUsers(response)
             },
         failure: { [weak self] (error) in
@@ -31,10 +31,21 @@ class UsersService: UsersServiceInput {
         })
     }
     
-    func createUserOrEditWith(firstName: String, lastName: String, email: String, id: String?) {
-        let request = self.requestBuilder.createUserOrEditWith(firstName: firstName, lastName: lastName, email: email, id: id)
-        self.requestSender.sendRequest(request, responseType: EmptyAPIResponse.self, success: { [weak self] (response) in
+    func createUserOrEditWith(_ url: String, user: UserInputModel) {
+        let request = self.requestBuilder.createUserOrEditWith(url, user: user)
+        self.requestSender.sendRequest(request, mainUrl: true, responseType: EmptyAPIResponse.self, success: { [weak self] (response) in
             self?.output?.successfullyUpdateUser()
+            },
+        failure: { [weak self] (error) in
+            self?.output?.handleError(error, completion: nil)
+        })
+    }
+    
+    func uploadImageForUser(_ imageVO: ImageVO, user: UserInputModel) {
+        guard  let encodedData = imageVO.image.jpegData(compressionQuality: 1.0)?.base64EncodedData() else { return }
+        let request = self.requestBuilder.uploadImage(encodedPhotoData: encodedData)
+        self.requestSender.sendRequest(request, mainUrl: false, responseType: ImageResponse.self, success: { [weak self] (response) in
+            self?.output?.successfullyUploadedImgForUser(response.link, user: user)
             },
         failure: { [weak self] (error) in
             self?.output?.handleError(error, completion: nil)

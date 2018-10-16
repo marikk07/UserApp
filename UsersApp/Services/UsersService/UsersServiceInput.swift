@@ -10,5 +10,6 @@ import Foundation
 
 protocol UsersServiceInput {
     func getUsers()
-    func createUserOrEditWith(firstName: String, lastName: String, email: String, id: String?)
+    func uploadImageForUser(_ imageVO: ImageVO, user: UserInputModel)
+    func createUserOrEditWith(_ url: String, user: UserInputModel)
 }

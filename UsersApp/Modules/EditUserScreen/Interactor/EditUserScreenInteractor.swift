@@ -25,20 +25,18 @@ class EditUserScreenInteractor: EditUserScreenInteractorInput {
     }
 
     // MARK: - EditUserScreenInteractorInput
-    func saveButtonTouchedWith(firstName: String?, lastName: String?, email: String?, id: String?) {
-        if let firstName = firstName, let lastName = lastName, let email = email {
-            if firstName.count < 1 || lastName.count < 1 || email.count < 1 {
+    func saveButtonTouchedWith(user: UserInputModel, imageVO: ImageVO) {
+        if user.first_name.count < 1 || user.last_name.count < 1 || user.email.count < 1 {
                 self.output.showErrorAlert(message: "Fill all fields")
             } else {
-                let responce = self.emailValidator.validateEmail(email)
+                let responce = self.emailValidator.validateEmail(user.email)
                 switch responce {
                 case .valid:
-                    self.userService.createUserOrEditWith(firstName: firstName, lastName: lastName, email: email, id: id)
+                    self.userService.uploadImageForUser(imageVO, user: user)
                 case .error(let message):
                     self.output.showErrorAlert(message: message)
                 }
             }
-        }
     }
 
 }
@@ -47,6 +45,14 @@ extension EditUserScreenInteractor: UsersServiceOutput {
     
     func successfullyGetUsers(_ users: [UserResponse]) {
     }
+    
+    func successfullyUploadedImgForUser(_ url: String, user: UserInputModel)  {
+        DispatchQueue.main.async {
+            self.userService.createUserOrEditWith(url, user: user)
+        }
+        
+    }
+    
     
     func successfullyUpdateUser() {
         DispatchQueue.main.async {

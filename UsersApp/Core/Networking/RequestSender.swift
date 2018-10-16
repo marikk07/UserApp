@@ -10,7 +10,8 @@ import Foundation
 
 protocol RequestSender {
     func sendRequest<Response>(_ request: APIRequest,
+                               mainUrl: Bool,
                                responseType: Response.Type,
-                               success: @escaping (Response)->(),
-                               failure: @escaping (ApiError)->()) where Response: Decodable
+                               success: @escaping (Response) -> (),
+                               failure: @escaping (ApiError) -> ()) where Response: Decodable
 }

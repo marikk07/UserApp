@@ -11,4 +11,5 @@ import Foundation
 protocol UsersServiceOutput: class, ErrorHandler {
     func successfullyGetUsers(_ users: [UserResponse])
     func successfullyUpdateUser()
+    func successfullyUploadedImgForUser(_ url: String, user: UserInputModel)
 }
